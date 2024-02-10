@@ -1,8 +1,20 @@
 # TMUX Configuration
 
+<!-- vim-markdown-toc GFM -->
+
+* [Install Powerline](#install-powerline)
+* [Reload Configuration](#reload-configuration)
+* [Plugins Manager](#plugins-manager)
+    * [tmux-mem-cpu-load](#tmux-mem-cpu-load)
+    * [Tmux Resurrent](#tmux-resurrent)
+    * [Tmux Continuum](#tmux-continuum)
+    * [Tmux Session Manager](#tmux-session-manager)
+
+<!-- vim-markdown-toc -->
+
 ## Install Powerline
 
-```
+```bash
 # archlinux
 sudo pacman -S powerline
 sudo pacman -S tmux
@@ -12,15 +24,9 @@ sudo apt install powerline -y
 sudo apt install tmux -y
 ```
 
-## Sync Configuration
-
-```
-stow tmux
-```
-
 ## Reload Configuration
 
-```
+```bash
 tmux source-file ~/.tmux.conf
 ```
 
@@ -28,13 +34,13 @@ tmux source-file ~/.tmux.conf
 
 Install Tmux Plugin Manager
 
-```
+```bash
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
 Put this at the bottom of ~/.tmux.conf
 
-```
+```bash
 # List of plugins
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
@@ -51,7 +57,7 @@ run '~/.tmux/plugins/tpm/tpm'
 
 Reload TMUX environment so TPM is sourced:
 
-```
+```bash
 # type this in terminal if tmux is already running
 tmux source ~/.tmux.conf
 ```
@@ -83,8 +89,6 @@ Key Bindings
 
 ### tmux-mem-cpu-load
 
-#### Installation
-
 ```bash
 git clone https://github.com/thewtex/tmux-mem-cpu-load ~/.tmux/plugins/tmux-mem-cpu-load
 cd ~/.tmux/plugins/tmux-mem-cpu-load
@@ -95,8 +99,6 @@ sudo make install
 
 ### Tmux Resurrent
 
-#### Installation
-
 ```bash
 cd ~/.tmux
 mkdir plugins
@@ -105,10 +107,16 @@ git clone https://github.com/tmux-plugins/tmux-resurrect.git ~/.tmux/plugins/tmu
 
 ### Tmux Continuum
 
-#### Installation
-
 ```bash
 cd ~/.tmux
 mkdir plugins
 git clone https://github.com/tmux-plugins/tmux-continuum.git ~/.tmux/plugins/tmux-continuum
+```
+
+### Tmux Session Manager
+
+Source: https://github.com/joshmedeski/t-smart-tmux-session-manager
+
+```bash
+set -g @plugin 'joshmedeski/t-smart-tmux-session-manager'
 ```
