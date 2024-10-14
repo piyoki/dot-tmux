@@ -2,27 +2,11 @@
 
 <!-- vim-markdown-toc GFM -->
 
-* [Install Powerline](#install-powerline)
 * [Reload Configuration](#reload-configuration)
 * [Plugins Manager](#plugins-manager)
-    * [tmux-mem-cpu-load](#tmux-mem-cpu-load)
-    * [Tmux Resurrent](#tmux-resurrent)
-    * [Tmux Continuum](#tmux-continuum)
-    * [Tmux Session Manager](#tmux-session-manager)
+* [Copy and Paste](#copy-and-paste)
 
 <!-- vim-markdown-toc -->
-
-## Install Powerline
-
-```bash
-# archlinux
-sudo pacman -S powerline
-sudo pacman -S tmux
-
-# ubuntu
-sudo apt install powerline -y
-sudo apt install tmux -y
-```
 
 ## Reload Configuration
 
@@ -87,36 +71,10 @@ Key Bindings
 
 - remove/uninstall plugins not on the plugin list
 
-### tmux-mem-cpu-load
+## Copy and Paste
 
-```bash
-git clone https://github.com/thewtex/tmux-mem-cpu-load ~/.tmux/plugins/tmux-mem-cpu-load
-cd ~/.tmux/plugins/tmux-mem-cpu-load
-cmake .
-make
-sudo make install
-```
+Source: https://www.seanh.cc/2020/12/27/copy-and-paste-in-tmux/
 
-### Tmux Resurrent
-
-```bash
-cd ~/.tmux
-mkdir plugins
-git clone https://github.com/tmux-plugins/tmux-resurrect.git ~/.tmux/plugins/tmux-resurrect
-```
-
-### Tmux Continuum
-
-```bash
-cd ~/.tmux
-mkdir plugins
-git clone https://github.com/tmux-plugins/tmux-continuum.git ~/.tmux/plugins/tmux-continuum
-```
-
-### Tmux Session Manager
-
-Source: https://github.com/joshmedeski/t-smart-tmux-session-manager
-
-```bash
-set -g @plugin 'joshmedeski/t-smart-tmux-session-manager'
-```
+- `Ctrl + b [` enters copy mode
+- `Ctrl + b ]` - pastes from tmux’s most recently created paste buffer (i.e. pastes the most recently copied text)
+- `Ctrl + b =` or `tmux choose-buffer` on the command line shows you all the paste buffers and lets you choose one to paste from
